@@ -20,6 +20,15 @@ Requires:	python%{pyver}dist(typing-extensions)
 # cffi dlopens libsndfile; ELF generator will not see it
 Requires:	lib64sndfile
 
+# Force the pep517 path. setup.py's setup_requires fetch hits a
+# setuptools bug when some installed dist has name=None.
+%prep -a
+cat > pyproject.toml <<'EOF'
+[build-system]
+requires = ["setuptools", "cffi>=1.0"]
+build-backend = "setuptools.build_meta"
+EOF
+
 %description
 soundfile reads and writes WAV/FLAC/OGG via the system libsndfile.
 Used by ACE-Step for audio export (instead of torchaudio/torchcodec).
@@ -29,4 +38,6 @@ Used by ACE-Step for audio export (instead of torchaudio/torchcodec).
 %license LICENSE
 %{py_sitedir}/soundfile.py
 %{py_sitedir}/_soundfile.py
+%{py_sitedir}/__pycache__/soundfile*.pyc
+%{py_sitedir}/__pycache__/_soundfile*.pyc
 %{py_sitedir}/soundfile-*.*-info
