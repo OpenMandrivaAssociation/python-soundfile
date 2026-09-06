@@ -29,6 +29,4 @@ Used by ACE-Step for audio export (instead of torchaudio/torchcodec).
 %license LICENSE
 %{py_sitedir}/soundfile.py
 %{py_sitedir}/_soundfile.py
-%{py_sitedir}/__pycache__/soundfile*.pyc
-%{py_sitedir}/__pycache__/_soundfile*.pyc
 %{py_sitedir}/soundfile-*.*-info
