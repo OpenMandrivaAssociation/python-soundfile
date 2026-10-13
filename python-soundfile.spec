@@ -1,6 +1,6 @@
 Name:		python-soundfile
 Version:	0.14.0
-Release:	1
+Release:	2
 Summary:	Audio file I/O through libsndfile
 License:	BSD-3-Clause
 Group:		Development/Python
@@ -9,7 +9,7 @@ Source0:	https://files.pythonhosted.org/packages/source/s/soundfile/soundfile-%{
 BuildArch:	noarch
 BuildSystem:	python
 BuildRequires:	python
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(sndfile)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
